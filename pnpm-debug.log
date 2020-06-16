@@ -1,0 +1,19 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "message": {
+      "errno": -13,
+      "code": "EACCES",
+      "syscall": "mkdir",
+      "path": "/usr/pnpm-global"
+    },
+    "err": {
+      "name": "Error",
+      "message": "EACCES: permission denied, mkdir '/usr/pnpm-global'",
+      "code": "EACCES",
+      "stack": "Error: EACCES: permission denied, mkdir '/usr/pnpm-global'"
+    }
+  }
+}

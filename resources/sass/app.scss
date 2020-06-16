@@ -1,0 +1,606 @@
+// // Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// // Variables
+// @import 'variables';
+
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+html,
+body {
+    font-size: 16px;
+    font-family: Assistant,
+        Roboto,
+        'Courier New',
+        Courier,
+        monospace;
+    background: #fff;
+}
+
+.navbar-brand {
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar {
+    z-index: 2;
+}
+
+.navbar-nav {
+    .nav-link {
+        color: #082447 !important;
+
+        &.active {
+            font-weight: bold;
+            color: #082447 !important;
+        }
+    }
+
+    .dropdown {
+        .dropdown-item {
+            color: #082447 !important;
+        }
+    }
+}
+
+.btn-login {
+    background-color: #082447;
+    color: #cccccc;
+    border-radius: 0;
+    transition: all .5s;
+
+    &.btn-login-desk {
+        margin-top: -10px !important;
+        margin-bottom: -9px !important;
+        margin-right: -16px !important;
+        height: 3.8rem;
+    }
+
+    &:hover {
+        background-color: #063167;
+        color: #dadada;
+    }
+}
+
+.btn-primary {
+    background-color: #FF8426;
+    border: 0;
+    border-radius: 0;
+    transition: all .5s;
+
+    &:hover,
+    &:visited {
+        background-color: #FE6E00;
+    }
+
+    &:active {
+        background-color: #FE6E00 !important;
+        border: none;
+        outline: none;
+        ;
+    }
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #082447;
+
+    &:hover,
+    &:visited {
+        background-color: #082447;
+    }
+
+    &:active {
+        background-color: #082447 !important;
+        border: none;
+        outline: none;
+        ;
+    }
+}
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/header.jpg");
+    background-position: center center;
+    background-size: cover;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    // position: absolute;
+    // top: 0;
+    width: 100%;
+    height: 90vh;
+    z-index: 1;
+    color: white;
+    margin-top: -4rem;
+
+    h1 {
+        font-size: 2.6rem;
+        font-family: "Playfair Display";
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .btn-primary {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+main {
+    .section-stats {
+        position: relative;
+        z-index: 2;
+        margin: -3.5rem auto 0 auto;
+        color: #082447;
+
+        .stats-detail {
+            background: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        div {
+            font-size: 1.2rem;
+            font-weight: lighter;
+        }
+    }
+}
+
+.section-popular {
+    // position: relative;
+    color: white;
+    margin-top: -3.3rem;
+    margin-bottom: -15rem;
+    min-height: 35rem;
+    background-color: #082447;
+
+    .section-popular-heading {
+        margin-top: 8rem;
+        margin-bottom: 2rem;
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: "Playfair Display";
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.section-popular-content {
+    color: #fff;
+
+    .card-travel {
+        min-height: 25rem;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        padding: 2rem;
+        margin-bottom: 2rem;
+
+        .travel-country {
+            font-size: 1.15rem;
+        }
+
+        .travel-location {
+            font-size: 1.625rem;
+        }
+
+        .mt-auto {
+            margin-top: auto;
+        }
+
+        .travel-button {
+            .btn-primary {
+                font-size: 1.15rem;
+                padding: .5rem 1.5rem;
+            }
+        }
+    }
+
+    // & div:nth-child(1) .card-travel {
+    //   background: url("../images/item-bali.jpg");
+    // }
+
+    // & div:nth-child(2) .card-travel {
+    //   background: url("../images/item-brome.jpg");
+    // }
+
+    // & div:nth-child(3) .card-travel {
+    //   background: url("../images/item-nusapenida.jpg");
+    // }
+
+    // & div:nth-child(4) .card-travel {
+    //   background: url("../images/item-tangkuban.jpg");
+    // }
+}
+
+.section-network {
+    background-color: white;
+    margin-top: -16rem;
+    padding-top: 20rem;
+    padding-bottom: 5rem;
+
+    .network-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: "Playfair Display";
+    }
+
+    .network-para {
+        font-size: 1.2rem;
+    }
+
+    .align-center {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.section-testi {
+    min-height: 38.5rem;
+    margin-bottom: -16rem;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(200, 200, 200, .1));
+
+    .testi-heading {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+
+        .testi-title {
+            font-size: 2.5rem;
+            font-family: "Playfair Display";
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+        }
+
+        .testi-para {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.section-testi-content {
+    margin-bottom: 4rem;
+
+    .testi-item {
+
+        // background-color: #fff;
+        // padding: 0;
+        .testi-desc {
+            border: 1px solid #707070;
+            background-color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .testi-item-content {
+            margin-bottom: 1.2rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            text-align: center;
+
+            .testi-item-name {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                margin-top: .5rem;
+                font-weight: bold;
+            }
+
+            .testi-item-text {
+                font-size: 1.4rem;
+                font-weight: lighter;
+                padding: 0 2rem;
+                min-height: 7rem;
+            }
+        }
+
+        .testi-trip-to {
+            margin-top: auto;
+            text-align: center;
+
+            hr {
+                margin: 0;
+                border-color: #707070;
+            }
+
+            div {
+                padding: 1rem 0;
+                font-size: 1.2rem;
+                font-weight: lighter;
+            }
+        }
+    }
+
+    .btn {
+        font-size: 1.25rem;
+    }
+
+    .btn-light {
+        background-color: #EFEFEF;
+        color: #928B85;
+
+        &:active,
+        &:hover,
+        &:visited {
+            background-color: #EFEFEF !important;
+            color: #928B85 !important;
+        }
+    }
+}
+
+.footer {
+    border-top: 1px solid #928B85;
+    border-bottom: 1px solid #928B85;
+    color: #928B85;
+
+    .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .footer-list {
+        list-style: none;
+        padding-left: 0;
+
+        .list-item {
+            font-size: 1.1rem;
+            margin-bottom: .3rem;
+        }
+
+        .list-link {
+            color: #928B85;
+        }
+    }
+}
+
+.section-detail-header {
+    min-height: 19.5rem;
+    margin-top: -4.5rem;
+    background-color: #E5E4E9;
+}
+
+.section-detail-content {
+    margin-top: -13rem;
+    min-height: 100vh;
+
+    .breadcrumb {
+        padding: 0;
+        background-color: transparent;
+        margin-bottom: 2rem;
+    }
+
+    .breadcrumb-item {
+        color: #082447;
+
+        &.active {
+            font-weight: bold;
+        }
+    }
+
+    .card-detail {
+        padding: 2rem;
+        min-height: 15rem;
+        border-radius: .625rem;
+
+        h1 {
+            font-size: 1.6rem;
+            color: #082447;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #a8a8a8;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #082447;
+            font-weight: bold;
+        }
+
+        &>h3 {
+            font-size: .975rem;
+            color: #082447;
+            font-weight: bold;
+        }
+
+        &>p {
+            color: #D1D1D1;
+            font-size: .85rem;
+        }
+
+        .gallery {
+            .xzoom-container {
+                .xzoom {
+                    max-width: 100%;
+                }
+            }
+
+            .xzoom-thumbs {
+                text-align: left !important;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+
+                .xzoom-gallery {
+                    margin: 0;
+                    margin-right: .1rem;
+                }
+
+                .xactive {
+                    border: 5px solid #FF8426 !important;
+                }
+            }
+        }
+
+        .atendee {
+
+            td,
+            th {
+                font-size: 1.15rem;
+                border: none;
+            }
+
+            th {
+                font-weight: normal;
+                color: #163D6E;
+            }
+
+            td {
+                color: #082447;
+                vertical-align: middle;
+            }
+
+            .cancel {
+                font-size: 1.5rem;
+
+                a {
+                    color: #082447;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .add-member {
+            input {
+                max-width: 8rem;
+            }
+
+            .gj-datepicker input {
+                border-right: 0;
+            }
+
+            .gj-datepicker span img {
+                width: 1.2rem;
+            }
+
+            .gj-datepicker span button.btn-outline-secondary {
+                box-shadow: none;
+            }
+        }
+
+        .features {
+            margin-top: 1.5rem;
+
+            h3 {
+                font-size: 1.15rem;
+                color: #082447;
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            &>div>* {
+                float: left;
+            }
+
+            .features-image {
+                margin-right: 1.25rem;
+                width: 2.815rem;
+                height: 2.815rem;
+            }
+        }
+    }
+
+    .card-right {
+        padding: 1.5rem !important;
+        position: relative;
+
+        th {
+            color: #082447;
+            font-weight: normal;
+        }
+
+        td {
+            color: #707070
+        }
+
+        .btn-trip {
+            margin: 1.5rem -1.5rem -1.5rem -1.5rem;
+            padding: 1rem 1rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .payment {
+            color: #082447;
+            font-size: 1rem;
+            font-weight: bold;
+            padding-bottom: 1rem;
+
+            img {
+                margin-right: 1rem;
+            }
+
+            img,
+            .payment-desc {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .unique {
+            color: #FF8426;
+        }
+
+        a {
+            display: block;
+        }
+
+        .cancel-booking {
+            color: #928B85;
+            font-size: 1.25rem;
+            position: absolute;
+            bottom: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .members {
+            .members-image {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+}
+
+.success {
+    margin-top: 6rem;
+
+    .success-text {
+        margin: 3rem auto;
+
+        h1 {
+            color: #082447;
+            font-weight: bold;
+        }
+
+        p {
+            color: #707070
+        }
+    }
+
+    .btn-secondary {
+        padding: .5rem 2rem;
+    }
+}
+
+.xzoom-loading {
+    background: url("../images/xloading.gif") !important;
+}
