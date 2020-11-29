@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use Mail;
-use App\Mail\TransactionSuccess;
-
-use Illuminate\Http\Request;
-use App\Transaction;
-use App\TransactionDetail;
-use App\TravelPackage;
 use App\User;
 
+use Exception;
 use Carbon\Carbon;
-
-use Illuminate\Support\Facades\Auth;
-
-use Midtrans\Config;
 use Midtrans\Snap;
+use App\Transaction;
+use Midtrans\Config;
+
+use App\TravelPackage;
+
+use App\TransactionDetail;
+
+use Illuminate\Http\Request;
+use App\Mail\TransactionSuccess;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class CheckoutController extends Controller
 {
@@ -103,7 +105,8 @@ class CheckoutController extends Controller
         return redirect()->route('checkout', $transaction->id);
     }
 
-    public function success(Request $request, $id){
+    public function success(Request $request, $id)
+    {
         $transaction = Transaction::with(['detail', 'travel_package.galleries', 'user'])->find($id);
 
         $transaction->transaction_status = 'PENDING';
@@ -118,7 +121,7 @@ class CheckoutController extends Controller
 
         $midtrans_params = [
             'transaction_details' => [
-                'order_id' => 'MIDTRANS-' . $transaction->id,
+                'order_id' => 'MIDTRANSV2-' . $transaction->id,
                 'gross_amount' => $transaction->transaction_total
             ],
             'customer_details' => [
@@ -131,9 +134,10 @@ class CheckoutController extends Controller
 
         try {
             $paymentUrl = \Midtrans\Snap::createTransaction($midtrans_params)->redirect_url;
+            // echo $paymentUrl;
 
             // redirect ke halaman midtrans
-            header('Location: ' . $paymentUrl);
+            header("Location: {$paymentUrl}",  true,  301 );  exit;
         } catch (Exception $error) {
             echo $error->getMessage();
         }

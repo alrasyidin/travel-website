@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', 'HomeController@index')
        ->name('home');
@@ -11,6 +11,7 @@ Route::get('/detail/{slug}', 'DetailController@index')
 Route::get('/checkout/{id}', 'CheckoutController@index')
        ->name('checkout')
        ->middleware(['auth', 'verified']);
+       
 Route::post('/checkout/{id}', 'CheckoutController@process')
        ->name('checkout_process')
        ->middleware(['auth', 'verified']);

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-
 use App\Transaction;
-use App\Mail\TransactionSuccess;
 use Midtrans\Config;
+
 use Midtrans\Notification;
+use Illuminate\Http\Request;
+use App\Mail\TransactionSuccess;
+use Illuminate\Support\Facades\Mail;
 
 
 class MidtransController extends Controller
@@ -27,10 +27,12 @@ class MidtransController extends Controller
         $status = $notification->transaction_status;
         $type = $notification->payment_type;
         $fraud = $notification->fraud_status;
-        $order_id = explode('-',$notification->order_id);
+        $order_id = explode('-', $notification->order_id);
 
         // cari transaksi berdasarkan id
         $transaction = Transaction::findOrFail($order_id[1]);
+        // return $transaction;
+        
         if ($status == 'capture') {
             if ($type == 'credit_card') {
                 if($fraud == 'challenge'){

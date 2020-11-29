@@ -62,7 +62,7 @@
     <div class="row section-popular-travel justify-content-center">
       @foreach ($packages as $package)
       <div class="col-10 col-sm-6 col-md-4 col-lg-3">
-        <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{$package->galleries->first()->image}}'); box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3)">
+        <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ Storage::url($package->galleries->first()->image) }}'); box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3)">
           <div class="travel-country">{{$package->location}}</div>
           <div class="travel-location">{{ $package->title }}</div>
           <div class="travel-button mt-auto">
